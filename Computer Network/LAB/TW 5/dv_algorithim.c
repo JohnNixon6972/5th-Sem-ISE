@@ -1,7 +1,12 @@
-#
-int a[nodes][4];
-}
-router[nodes];
+#include <stdio.h>
+#include <stdlib.h>
+#define nodes 10
+int no;
+
+struct Nodes
+{
+    int a[nodes][4];
+} router[nodes];
 
 void init(int r)
 {
