@@ -15,7 +15,7 @@ void init(int r)
     {
 
         router[r].a[i][1] = i;
-        router[r].a[i][2] = 999;
+        router[r].a[i][2] = 999; 
     }
     router[r].a[r][2] = 0;
     router[r].a[r][3] = r;
