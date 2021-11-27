@@ -1,0 +1,7 @@
+Enter the Polynomial :: 
+Generating Polynomial is :: 10001000000100001
+Modified t[u] is :: 0000000000000000
+Checksum is :: 
+Final Codeword is :: 
+Test Error detection 0(yes) 1(no) ? :: 
+No Error Detected
