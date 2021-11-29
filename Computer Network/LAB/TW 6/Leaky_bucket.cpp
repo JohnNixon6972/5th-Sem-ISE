@@ -2,10 +2,15 @@
 #include <dos.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include<windows.h>
 
 using namespace std;
 
 #define bucketSize 512
+
+int random(int min, int max){
+   return min + rand() / (RAND_MAX / (max - min + 1) + 1);
+}
 
 void bktInput(int a, int b)
 {
@@ -13,12 +18,12 @@ void bktInput(int a, int b)
         cout << "\n\t\tBucket overflow";
     else
     {
-        delay(500);
+        Sleep(500);
         while (a > b)
         {
-            cout << "\n\t\t" << b << " bytes outputted.";
+            cout << "\n\t\t" << b << " bytes outputted."<<"\t Remaining bytes "<<a;
             a -= b;
-            delay(500);
+            Sleep(500);
         }
         if (a > 0)
             cout << "\n\t\tLast " << a << " bytes sent\t";
@@ -26,17 +31,18 @@ void bktInput(int a, int b)
     }
 }
 
-void main()
+int main()
 {
     int op, pktSize;
-    randomize();
+    // randomize();
     cout << "Enter output rate : ";
     cin >> op;
     for (int i = 1; i <= 5; i++)
     {
-        delay(random(1000));
-        pktSize = random(1000);
+        Sleep(random(100,1000));
+        pktSize = random(100,700);
         cout << "\nPacket no " << i << "\tPacket size = " << pktSize;
         bktInput(pktSize, op);
     }
+    return 0;
 }
